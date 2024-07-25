@@ -1,0 +1,79 @@
+# @app.get("/items/{item_id}")
+# async def get_item(item_id:int):
+#     return {"item_id": item_id}
+
+# # @app.get("/user/{user_id}")
+# # async def get_user(user_id:int):
+# #     return {"user_id": user_id}
+
+# #query parameter
+# @app.get("/queryP")
+# def index(q:int=0, m: Optional[str] = Query(None, max_length =5, min_length=3, regex="^fff")):
+#     return {"product is:": q, "m is: ": m}
+# #object int has no attribute length
+# #how to give file path
+
+# @app.get("/items/{file_path:path}")
+# def index(file_path: str):
+#     return {"file_path": file_path}
+
+# @app.post("/items")
+# def index(user: user):
+#     return user   
+# def upload(file: UploadFile = File(...)):
+#     contents = file.file.read()
+#     buffer = BytesIO(contents)
+#     df = pd.read_csv(buffer)
+#     buffer.close()
+#     file.file.close()
+#     return df.to_dict(orient='records')
+
+# pi= open("clf_model.pkl", "rb")
+# class_model = pickle.load(pi)
+
+
+######### Singleton pattern #########
+ #instance method
+
+    # @classmethod
+    # def get_instance(cls):
+    #     if cls._instance ==None:
+    #         cls._instance = cls.__new__(cls)
+    #     return cls._instance
+
+    # def log(self, ex: Exception):
+    #     print(ex)
+
+    # def log(self, message: str):
+    #     print(message)
+
+
+
+
+#########  Docker ###############
+##############################
+# FROM python:3.8.10
+# COPY . /app
+# WORKDIR /app
+# RUN pip install -r requiremnents.txt
+# CMD python app.py
+
+##### COMANDS #####
+# docker build -t welcome-app . 
+# docker images  
+# #####  Container from docker image  ######
+
+# docker run -p 5000:5000  #host port and container port
+# docker ps
+# #we are accessing from host port to container port - ???
+# docker stop [containerID]
+
+# # renaming docker images #
+# docker tag sara/welcome-app sara/welcome-app1
+
+# #pushing to docker hub
+# docker push sara/welcome
+
+#BASIC COMMANDS#
+#docker build -t myimage .
+#docker run -d --name mycontainer -p 8000:8000 myimage
