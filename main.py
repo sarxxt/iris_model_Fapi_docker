@@ -19,7 +19,7 @@ class User(BaseModel):
     file: UploadFile
 
 @app.get("/")
-async def reas_root():
+async def read_root():
     return {"hello": "world"}
 
 
@@ -44,7 +44,7 @@ async def predict_flower_type(file:UploadFile):
 
     df  = Clean(temp_file_name)
     ''' 
-        Clean class (this class is in data_preprocess file) has a preprcess fucntion which renames the columns of the dataset 
+        Clean class (this class is in data_preprocess file) has a preprocess function which renames the columns of the dataset 
         and drops the Species column
     
     '''
